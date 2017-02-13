@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_hr_payslip_form" model="ir.ui.view">
+        <field name="name">hr.ven.payroll.form</field>
+        <field name="model">hr.payslip</field>
+        <field name="inherit_id" ref="hr_payroll.view_hr_payslip_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form/sheet/notebook" position="inside">
+                <page string="hola mundo">
+                    <group>
+                        <group>
+                            <field name="month"/>
+                            <field name="final_day_month"/>
+                        </group>
+                        <group>
+                            <field name="monday_month"/>
+                            <field name="sundays_holidays_worked"/>
+                        </group>
+                        <group>
+                            <field name="worked_hours" widget="float_time"/>
+                            <field name="no_worked_hours" widget="float_time"/>
+                        </group>
+                        <group>
+                            <field name="night_extra_hours" widget="float_time"/>
+                            <field name="daytime_extra_hours" widget="float_time"/>
+                        </group>
+                    </group>
+                </page>
+
+            </xpath>
+        </field>
+
+    </record>
+
+</odoo>
