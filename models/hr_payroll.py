@@ -55,6 +55,15 @@ class VenHrPayslip(models.Model):
     def _set_night_hours(self):
         self.worked_hours = ts_sheet.total_attendance - self.night_extra_hours
 
+    # @api.depends(trimestral_ded_trig)
+    # def _set_trimestral_deduction(self):
+    #     if self.trimestral_ded_trig == False:
+    #         self.trimestral_ded_value = 0.0
+    #     else:
+    #         contract = self.env['hr_contract'].search([('employee_id','=',self.employee_id.id)])
+    #         contract_wage = contract.wage
+    #         self.trimestral_ded_value = (contract_wage * 3) * 0.05
+    #
     monday_month = fields.Integer(string='Lunes del mes', default=_get_month_data)
     month = fields.Char(string='Mes', default=calendar.month_name[actual_date()[0]])
     final_day_month = fields.Integer(string='Fin del mes', default=calendar.monthrange(actual_date()[1],actual_date()[0])[1])
@@ -64,6 +73,9 @@ class VenHrPayslip(models.Model):
     no_worked_hours = fields.Float(string='Diferencia')
     daytime_extra_hours = fields.Float(string="Horas Extras Diurnas")
     night_extra_hours = fields.Float(string='Horas Extras Nocturnas')
+
+    # trimestral_ded_trig = fields.Bool(default = False)
+    # trimestral_ded_value = fields.Float(string = 'Aporte Trimestral', compute=_set_trimestral_deduction)
 
 
 
