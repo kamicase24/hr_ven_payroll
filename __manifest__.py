@@ -14,7 +14,7 @@
     'sequence' : 99,
     'category' : 'Human Resources',
     'price' : 30.00,
-    'currency' : 'USD'
+    'currency' : 'USD',
     'website' : 'jrojas.odoo.com',
     'depends' : ['hr_payroll'],
     'data' : [
