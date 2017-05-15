@@ -48,8 +48,8 @@ class VenHrPayslip(models.Model):
         if ts_sheet.total_difference < 0:
             self.no_worked_hours = ts_sheet.total_difference
         else:
-            self.daytime_extra_hours = ts_sheet.total_difference - ts_sheet.total_attendance
-        self.worked_hours = ts_sheet.total_attendance - self.daytime_extra_hours
+            self.daytime_extra_hours = ts_sheet.total_difference
+        self.worked_hours = ts_sheet.total_attendance
 
     @api.onchange('night_extra_hours')
     def _set_night_hours(self):
