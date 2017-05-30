@@ -1,4 +1,4 @@
-#-*- coding:utf-8 -*-
+#-*- coding:utf-8 -*-2222
 
 import calendar
 from datetime import datetime, timedelta, date
@@ -68,12 +68,12 @@ class VenHrPayslip(models.Model):
     month = fields.Char(string='Mes', default=calendar.month_name[actual_date()[0]])
     final_day_month = fields.Integer(string='Fin del mes', default=calendar.monthrange(actual_date()[1],actual_date()[0])[1])
     sundays_holidays_worked = fields.Integer(string='Domingos y Feriados laborados')
-
     worked_hours = fields.Float(string='Horas trabajadas')
     no_worked_hours = fields.Float(string='Diferencia')
-    daytime_extra_hours = fields.Float(string="Horas Extras Diurnas")
+    daytime_extra_hours = fields.Float(string='Horas Extras Diurnas')
     night_extra_hours = fields.Float(string='Horas Extras Nocturnas')
-
+    biweekly_days = fields.Integer(string='Dias de la Quincena', default=11)
+    rest_days = fields.Integer(string='Días de Descanso', default=4)
     # trimestral_ded_trig = fields.Bool(default = False)
     # trimestral_ded_value = fields.Float(string = 'Aporte Trimestral', compute=_set_trimestral_deduction)
 

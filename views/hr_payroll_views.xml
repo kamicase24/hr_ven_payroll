@@ -17,10 +17,12 @@
                             <field name="sundays_holidays_worked"/>
                         </group>
                         <group>
+                            <field name="biweekly_days"/>
                             <field name="worked_hours" widget="float_time"/>
                             <field name="no_worked_hours" widget="float_time"/>
                         </group>
                         <group>
+                            <field name="rest_days"/>
                             <field name="night_extra_hours" widget="float_time"/>
                             <field name="daytime_extra_hours" widget="float_time"/>
                         </group>
